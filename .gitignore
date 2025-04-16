@@ -1,0 +1,5 @@
+.vs
+src/*/bin
+src/*/obj
+**/appsettings.Development.json
+/obj/Docker/DOCKER_REGISTRY.cache

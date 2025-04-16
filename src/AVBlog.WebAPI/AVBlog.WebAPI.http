@@ -1,0 +1,6 @@
+@AVBlog.WebAPI_HostAddress = http://localhost:5289
+
+GET {{AVBlog.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

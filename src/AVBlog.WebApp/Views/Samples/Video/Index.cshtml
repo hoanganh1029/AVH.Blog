@@ -1,0 +1,26 @@
+﻿@using AVBlog.Domain.Constants
+@model IEnumerable<VimeoVideoViewModel>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Videos</h1>
+@foreach (var item in Model)
+{
+    <div class="row align-items-start">
+        <div class="col">
+            <iframe src="https://player.vimeo.com/video/@item.VimeoId" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <div class="col">
+            <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
+            <p>@Html.DisplayNameFor(Model => Model.PublishedDate): @Html.DisplayFor(modelItem => item.PublishedDate)</p>
+            <p>@Html.DisplayNameFor(Model => Model.Description): @Html.DisplayFor(modelItem => item.Description)</p>
+            <p>@Html.DisplayNameFor(Model => Model.Presenter): @Html.DisplayFor(modelItem => item.Presenter)</p>
+            @* @if (!User.IsInRole(RoleConstant.Admin))
+            {
+                <p>@Html.DisplayNameFor(Model => Model.ExpiredDate): @Html.DisplayFor(modelItem => item.ExpiredDate)</p>
+            } *@
+        </div>
+    </div>
+}
